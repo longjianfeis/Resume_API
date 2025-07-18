@@ -1,4 +1,4 @@
-Resume API 说明文档
+Resume API 接口文档
 
 一、概览
 
@@ -56,7 +56,7 @@ ports 映射宿主机 8699 到容器内 8699。
 
 networks 中 docker_default 必须与 Dify 容器所在网络名称一致。
 
-六、接口列表
+四、接口列表
 
 路径            方法            描述
 POST /parse-resume-text/	POST	文本解析 → JSON （调用 Chatflow）
@@ -69,7 +69,7 @@ POST /process_json_to_text/	POST	任意 JSON → 文本
 所有 POST 接口 均需在请求头中带上 X-API-Key: <API_KEY> 进行鉴权。
 
 API端点详解
-6.1 生成PDF简历
+4.1 生成PDF简历
 端点: /generate-resume/
 
 方法: POST
@@ -151,7 +151,7 @@ X-API-Key: 9589ca16aa2844de6975809fbac3891ef2a105eadcde6f56e044c60b6b774ec4
 
 响应体: 二进制的PDF文件流。在前端，这通常被处理为一个 Blob 对象，然后可以创建一个下载链接。
 
-6.2 上传PDF并解析
+4.2 上传PDF并解析
 端点: /parse-resume/
 
 方法: POST
@@ -241,7 +241,7 @@ formData.append('file', pdfFile);
     "user_target": "平面设计师 / 视觉设计师"
 }
 
-6.3 上传简历文本并解析
+4.3 上传简历文本并解析
 端点: /parse-resume-text/
 
 方法: POST
@@ -324,7 +324,7 @@ X-API-Key: 9589ca16aa2844de6975809fbac3891ef2a105eadcde6f56e044c60b6b774ec4
     "user_target": "平面设计师 / 视觉设计师"
 }
 
-6.4 文本处理API (改写/扩写/缩写)
+4.4 文本处理API (改写/扩写/缩写)
 以下API的调用方式完全相同，它们都接收一个包含文本的JSON对象。
 
 /rewrite-text/ (润色文本)
@@ -361,7 +361,7 @@ X-API-Key: 9589ca16aa2844de6975809fbac3891ef2a105eadcde6f56e044c60b6b774ec4
 
 /contract-text/: {"contracted_text": "..."}
 
-6.5 简历评估API
+4.5 简历评估API
 端点: /process_json_to_text/
 
 方法: POST
