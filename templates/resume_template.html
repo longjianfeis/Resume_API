@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历 - {{ user_name }}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="resume-container">
+        <header class="main-header">
+            <h1>{{ user_name }}</h1>
+            <p class="contact-info">
+                {% if user_contact_info.phone %}<span>{{ user_contact_info.phone }}</span>{% endif %}
+                {% if user_contact_info.phone and user_contact_info.email %}&nbsp;&bull;&nbsp;{% endif %}
+                {% if user_contact_info.email %}<span>{{ user_contact_info.email }}</span>{% endif %}
+            </p>
+            {% if user_target %}
+            <p class="target-info">申请目标: {{ user_target }}</p>
+            {% endif %}
+        </header>
+
+        {% if user_education %}
+        <section class="resume-section">
+            <h2>教育背景</h2>
+            <hr>
+            {% for edu in user_education %}
+            <article class="entry">
+                <div class="entry-header">
+                    <span class="title">{{ edu.user_university }}</span>
+                    <span class="date">{{ edu.dates }}</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="subtitle">{{ edu.user_major }}, {{ edu.degree }}</span>
+                </div>
+                <div class="education-details">
+                    <span>GPA: {{ edu.user_gpa }}</span>
+                    <span>语言: {{ edu.user_language_score }}</span>
+                </div>
+                {% if edu.details %}
+                <p class="details-text">{{ edu.details }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        {% if internship_experience %}
+        <section class="resume-section">
+            <h2>实习经历</h2>
+            <hr>
+            {% for exp in internship_experience %}
+            <article class="entry">
+                <div class="entry-header">
+                    <span class="title">{{ exp.company }}</span>
+                    <span class="date">{{ exp.dates }}</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="subtitle">{{ exp.role }}</span>
+                </div>
+                <ul class="details">
+                    {% for point in exp.description_points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+        
+        {% if user_research_experience %}
+        <section class="resume-section">
+            <h2>科研经历</h2>
+            <hr>
+            {% for res in user_research_experience %}
+            <article class="entry">
+                <div class="entry-header">
+                    <span class="title">{{ res.research_project }}</span>
+                    <!-- <span class="title">{{ res['research project'] }}</span> -->
+                    <span class="date">{{ res.dates }}</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="subtitle">{{ res.role }}</span>
+                </div>
+                <ul class="details">
+                     {% for point in res.description_points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        {% if user_extracurricular_activities %}
+        <section class="resume-section">
+            <h2>课外活动</h2>
+            <hr>
+            {% for act in user_extracurricular_activities %}
+            <article class="entry">
+                <div class="entry-header">
+                    <span class="title">{{ act.organization }}</span>
+                    <span class="date">{{ act.dates }}</span>
+                </div>
+                <div class="entry-subheader">
+                    <span class="subtitle">{{ act.role }}</span>
+                </div>
+                <ul class="details">
+                     {% for point in act.description_points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+    </div>
+</body>
+</html>

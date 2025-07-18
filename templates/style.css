@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Noto Sans SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-container {
+    max-width: 850px;
+    margin: 2em auto;
+    padding: 2em;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2.5em;
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0 0 0.2em 0;
+    color: #000;
+}
+
+.contact-info {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.target-info {
+    font-size: 1em;
+    font-weight: 500;
+    color: #333;
+    margin-top: 0.5em;
+}
+
+.resume-section {
+    margin-bottom: 1.8em;
+}
+
+.resume-section h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+    color: #1a1a1a;
+    text-align: left;
+}
+
+.resume-section hr {
+    border: 0;
+    height: 1.2px;
+    background-color: #333;
+    margin-bottom: 1.2em;
+}
+
+.entry {
+    margin-bottom: 1.5em;
+}
+
+.entry-header, .entry-subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.2em;
+}
+
+.entry-header .title {
+    font-weight: 700;
+    font-size: 1.05em;
+    color: #000;
+}
+
+.entry-header .date, .entry-subheader .location {
+    font-weight: 500;
+    color: #444;
+    font-size: 1em;
+}
+
+.entry-subheader .subtitle {
+    font-style: italic;
+    font-weight: 500;
+    color: #222;
+    font-size: 1.05em;
+}
+
+.education-details {
+    display: flex;
+    gap: 2em;
+    font-size: 0.95em;
+    color: #444;
+    margin-top: 0.4em;
+}
+
+.details-text {
+    font-size: 1em;
+    color: #444;
+    margin: 0.5em 0 0 0;
+    text-align: justify;
+}
+
+.details {
+    margin: 0.5em 0 0 0;
+    padding-left: 1.5em;
+}
+
+.details li {
+    margin-bottom: 0.5em;
+    text-align: justify;
+}

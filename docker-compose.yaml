@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8699:8699"
+    env_file:
+      - .env
+    networks:
+      - docker_default
+    restart: always
+
+# 外部网络：直接加入已存在的 Dify 网络
+networks:
+  docker_default:
+    external: true
